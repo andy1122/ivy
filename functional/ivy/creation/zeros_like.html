@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>empty &mdash; Ivy 1.0 documentation</title>
+  <title>zeros_like &mdash; Ivy 1.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="array" href="array.html" />
-    <link rel="prev" title="triu" href="triu.html" /> 
+    <link rel="next" title="tril" href="tril.html" />
+    <link rel="prev" title="ones_like" href="ones_like.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,10 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="ones.html">ones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="full_like.html">full_like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ones_like.html">ones_like</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zeros_like.html">zeros_like</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zeros_like</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tril.html">tril</a></li>
 <li class="toctree-l2"><a class="reference internal" href="triu.html">triu</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">empty</a></li>
+<li class="toctree-l2"><a class="reference internal" href="empty.html">empty</a></li>
 <li class="toctree-l2"><a class="reference internal" href="array.html">array</a></li>
 </ul>
 </li>
@@ -196,13 +196,13 @@
         
           <li><a href="../creation.html">Creation</a> &raquo;</li>
         
-      <li>empty</li>
+      <li>zeros_like</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/functional/ivy/creation/empty.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/functional/ivy/creation/zeros_like.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -215,23 +215,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="empty">
-<h1>empty<a class="headerlink" href="#empty" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="zeros-like">
+<h1>zeros_like<a class="headerlink" href="#zeros-like" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="ivy.functional.ivy.creation.empty">
-<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">empty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>int<span class="p">, </span>Tuple<span class="p">[</span>int<span class="p">]</span><span class="p">, </span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">dtype</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Dtype<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">device</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; ivy.array.Array<a class="reference internal" href="../../../_modules/ivy/functional/ivy/creation.html#empty"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.creation.empty" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a new array of given shape and type, filled with zeros.
-:param shape: output array shape.
-:param dtype: output array data type. If dtype is None, the output array data type must be the default</p>
-<blockquote>
-<div><p>floating-point data type. Default: None.</p>
-</div></blockquote>
+<dt id="ivy.functional.ivy.creation.zeros_like">
+<code class="sig-prename descclassname">ivy.</code><code class="sig-name descname">zeros_like</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">dtype</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Dtype<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dev</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>ivy.Device<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Union<span class="p">[</span>ivy.array.Array<span class="p">, </span>ivy.NativeArray<span class="p">]</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/creation.html#zeros_like"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ivy.functional.ivy.creation.zeros_like" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an array of zeros with the same shape and type as x, unless dtype provided which overrides.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>device</strong> – device on which to place the created array. Default: None.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – The shape and data-type of x define these same attributes of the returned array.</p></li>
+<li><p><strong>dtype</strong> (<em>data-type string</em><em>, </em><em>optional</em>) – The desired data-type for the array in string format, i.e. ‘float32’ or ‘int64’.
+If not given, then the type of the original array is used.</p></li>
+<li><p><strong>dev</strong> (<em>ivy.Device</em><em>, </em><em>optional</em>) – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. Same as x if None.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>an uninitialized array having a specified shape</p>
+<dd class="field-even"><p>Tensor of zeros with the same shape and type as a, unless dtype provided which overrides.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -251,10 +251,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="array.html" class="btn btn-neutral float-right" title="array" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tril.html" class="btn btn-neutral float-right" title="tril" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="triu.html" class="btn btn-neutral float-left" title="triu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ones_like.html" class="btn btn-neutral float-left" title="ones_like" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
